@@ -111,6 +111,9 @@ For more details on API Portal, see [Administer API Portal](/docs/apim_adminis
 **Login name regular expression**
 : Enter a valid regular expression to restrict the login names that you can enter. This does not retrospectively enforce login names. If you change the default setting, you must update the `loginNameValidationMessage` in `app.config`. Defaults to `[^;,\\/?#<>&;!]{1,}`.
 
+**User name regular expression**
+: Enter a valid regular expression to restrict the user names that can be entered.  This does not retrospectively enforce existing user names. Defaults to `^[\\p{L}\\d .,\'_-]+$`.
+
 **Enable application scopes**
 : Select whether to enable scopes at the level of the client application. This allows the API administrator to create application-level scopes to permit access to resources that are not covered by API-level scopes (for example, for API method-level authorization). This setting is not enabled by default. For more details, see [Configure API method-level authorization for client applications](/docs/apim_administration/apimgr_admin/api_mgmt_method_authz/).
 
