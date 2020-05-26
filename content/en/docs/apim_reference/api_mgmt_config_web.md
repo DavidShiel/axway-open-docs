@@ -121,7 +121,7 @@ For more details on API Portal, see [Administer API Portal](/docs/apim_adminis
 : Select whether to enable routing to different front-end API versions from a single base path using a query string parameter (for example, `https://HOSTNAME:8065/api/helloworld?v=v1`). This setting is unselected by default, and the URL path-based version is used instead. When selected, you must enter a value in the next setting, **Query string version parameter**.
 
 **Query string version parameter**
-: Specifies the name of the query string version parameter used to route between different API versions (for example, a value of `v` requires `/my_api?v=1` in the query string, while `version` requires `/my_api?version=1`). The name of the parameter will also be published in the Swagger generated for the front-end API in the API Catalog. For a detailed example, see see [Configure API routing based on version query string](/docs/apim_administration/apimgr_admin/api_mgmt_version_routing/).
+: Specifies the name of the query string version parameter used to route between different API versions (for example, a value of `v` requires `/my_api?v=1` in the query string, while `version` requires `/my_api?version=1`). The name of the parameter will also be published in the Swagger generated for the front-end API in the API Catalog. For a detailed example, see [Configure API routing based on version query string](/docs/apim_administration/apimgr_admin/api_mgmt_version_routing/).
 
 ### Password, Login & Session Management settings
 
