@@ -208,6 +208,7 @@ For more details, see [Enforce API Manager global policies](/docs/apim_administr
 For more details, see [Add API Manager fault handler policies](/docs/apim_administration/apimgr_admin/api_mgmt_custom_policies/#add-api-manager-fault-handler-policies).
 
 ### Advisory Banner
+
 : When the advisory banner is enabled, the advisory banner text is displayed on the API Manager login screen. This setting is switched off by default.
 
 ## Alerts
