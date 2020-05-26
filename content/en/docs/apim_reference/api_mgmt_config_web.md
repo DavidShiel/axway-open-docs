@@ -75,6 +75,9 @@ You can configure the following settings on the **API Manager** tab:
 **Demo mode**
 : Select whether demo mode is enabled. When this setting is enabled, API Manager automatically generates random data, and displays metrics on the **Monitoring** tab without needing to send traffic through the API Gateway. Demo mode is disabled by default.
 
+**Case-insensitive table sorting**
+: Select whether case-insensitive sorting of data in tables is enabled. Case-insensitive table sorting is enabled by default.
+
 **Trial mode**
 : Select whether trail mode is enabled for all organizations. Trial mode allows the API administrator to manage the lifespan of the organization, including any resources that belong to that organization (for example, users or applications). When this setting is enabled, API Manager displays **TRIAL** settings for the administrator when editing the organization on the **Client Registry** > **Organizations** page. Trial mode is disabled by default.
 
@@ -99,12 +102,6 @@ For more details on API Portal, see [Administer API Portal](/docs/apim_adminis
 **User registration**
 : Select whether to enable automatic user registration. This is enabled by default.
 
-**Forgot password**
-: Select whether to enable the **Forgot Password** tab on the main API Manager login page. For some user-providers (for example, LDAP), you cannot reset the user password, so you may need to disable this feature. This is enabled by default.
-
-**Minimum password length**
-: Select the minimum number of characters required for user passwords. Defaults to 6.
-
 **Auto-approve user registration**
 : Select whether automatic approval of user registration requests is enabled. This is enabled by default.
 
@@ -126,8 +123,28 @@ For more details on API Portal, see [Administer API Portal](/docs/apim_adminis
 **Query string version parameter**
 : Specifies the name of the query string version parameter used to route between different API versions (for example, a value of `v` requires `/my_api?v=1` in the query string, while `version` requires `/my_api?version=1`). The name of the parameter will also be published in the Swagger generated for the front-end API in the API Catalog. For a detailed example, see see [Configure API routing based on version query string](/docs/apim_administration/apimgr_admin/api_mgmt_version_routing/).
 
+### Password, Login & Session Management settings
+
 **Idle session timeout (minutes)**
 : Enter the number of minutes after which idle API Manager sessions time out. Defaults to `60` minutes. Changing this value only affects logins made after the change.
+
+**Change password on first login**
+: Select whether to enforce a change of password when a user logs into API Manager for the first time. This is enabled by default.
+
+**Enable password reset**
+: Select whether to enable the **Forgot Password** tab on the main API Manager login page. For some user-providers (for example, LDAP), you cannot reset the user password, so you may need to disable this feature. This is enabled by default.
+
+**Enable password expiry**
+: Select whether to enable password expiry for API Manager users. This is enabled by default. For more details, see [Enforce password changes](/docs/apim_administration/apimgr_admin/api_mgmt_admin/#enforce-password-changes).
+
+**Days before passwords expire**
+: Enter the number of days after which a user's password will expire. Defaults to `90` days. This setting is only applicable if password expiry is switched ON.
+
+**Minimum password length**
+: Select the minimum number of characters required for user passwords. Defaults to 6.
+
+**Lock user account on invalid login**
+: Select whether a user should be locked out of API Manager for 30 minutes after 6 invalid logins have been attempted over a time period of 5 minutes. If a user's account is locked, they have two options available to them; i) wait for the configured time period to elapse, ii) initiate the 'Forgot password' flow (On receiving their new auto-generated password the invalid attempt counter will be reset, and the user will be able to log back in to API Manager immediately). Note, API Manager can be configured to use an external Identity Provider (IdP) for authentication. In this case users are deemed 'external' and are automatically added as API Manager users when they first login. If the external IdP has its own account lockout feature, and a user has been locked out (for whatever reason), API Manager will see this as invalid login attempt; the invalid attempt counter will be incremented, and the authentication will fail. Customers that purely use an external IdP for user authentication may wish to switch this setting OFF, given that the IdP is performing the same task.
 
 ### Organization administrator delegation
 
